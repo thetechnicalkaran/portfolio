@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Karan Myworld</title>
+
+<style>
+
+body {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    color: white;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+/* MATRIX BACKGROUND */
+
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+/* NAVBAR */
+
+nav {
+    background: rgba(0,0,0,0.7);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    box-shadow: 0px 0px 20px cyan;
+}
+
+nav a {
+    color: cyan;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 22px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: yellow;
+    text-shadow: 0px 0px 10px yellow;
+}
+
+/* HEADING */
+
+h1 {
+    font-size: 70px;
+    color: cyan;
+    margin-top: 40px;
+    text-shadow: 0px 0px 20px cyan;
+}
+
+/* TYPING EFFECT */
+
+.typing {
+    font-size: 35px;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid cyan;
+    width: 0;
+    margin: auto;
+    animation:
+    typing 5s steps(40, end) forwards,
+    blink 1s infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink {
+    50% { border-color: transparent }
+}
+
+/* IMAGE GALLERY */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+img {
+    width: 350px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px cyan;
+    transition: 0.4s;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+/* BUTTON */
+
+button {
+    background: cyan;
+    color: black;
+    border: none;
+    padding: 15px 35px;
+    font-size: 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: 0.4s;
+}
+
+button:hover {
+    background: yellow;
+    transform: scale(1.1);
+}
+
+/* CLOCK */
+
+#clock {
+    margin-top: 30px;
+    font-size: 35px;
+    color: cyan;
+}
+
+/* TERMINAL */
+
+.terminal {
+    background: black;
+    color: lime;
+    width: 80%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: left;
+    font-family: monospace;
+    box-shadow: 0px 0px 20px lime;
+    font-size: 18px;
+}
+
+/* VIDEO */
+
+iframe {
+    margin-top: 40px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 25px cyan;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    font-size: 22px;
+    color: lightgray;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- MATRIX BACKGROUND -->
+<canvas id="matrix"></canvas>
+
+<!-- NAVBAR -->
+<nav>
+<a href="#">Home</a>
+<a href="#">Projects</a>
+<a href="#">Videos</a>
+<a href="#">Contact</a>
+</nav>
+
+<!-- HEADING -->
+<h1>Hello Karan</h1>
+
+<!-- TYPING TEXT -->
+<div class="typing">
+Welcome to Karan Myworld Hacker Website
+</div>
+
+<h2>Linux + Nginx + HTML + CSS + JavaScript</h2>
+
+<!-- IMAGE GALLERY -->
+<div class="gallery">
+
+<img src="https://images.pexels.com/photos/5380642/pexels-photo-5380642.jpeg">
+
+<img src="https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg">
+
+<img src="https://images.pexels.com/photos/1181359/pexels-photo-1181359.jpeg">
+
+</div>
+
+<!-- BUTTON -->
+<button onclick="showMessage()">
+Click Me
+</button>
+
+<!-- CLOCK -->
+<div id="clock"></div>
+
+<!-- YOUR YOUTUBE VIDEO -->
+<h2>Karan MyWorld Video</h2>
+
+<iframe width="700" height="400"
+src="https://www.youtube.com/embed/dRt4hG1SqJY"
+title="Karan MyWorld"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+<!-- TERMINAL -->
+<div class="terminal">
+
+<p>karan@linux:~$ sudo apt install future</p>
+
+<p>Reading package lists... Done</p>
+
+<p>Building hacker website...</p>
+
+<p>Status: SUCCESS</p>
+
+<p>Server running on localhost:80</p>
+
+<p>YouTube Channel: Karan Myworld</p>
+
+</div>
+
+<!-- MY FAVORATE MUSIC FROM 2017 -->
+
+<h2>🎵 My Favorite Music - Cartoon-Justin Bieber NCS Music (from 2017)🎵</h2>
+
+<iframe width="700" height="400"
+src="https://www.youtube.com/embed/K4DyBUG242c"
+title="Fearless NCS"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+<!-- FOOTER -->
+<footer>
+Made with by Karan
+</footer>
+
+<!-- JAVASCRIPT -->
+<script>
+
+/* BUTTON POPUP */
+
+function showMessage() {
+    alert("Welcome Karan");
+}
+
+/* LIVE CLOCK */
+
+setInterval(() => {
+
+document.getElementById("clock").innerHTML =
+"Current Time: " + new Date().toLocaleTimeString();
+
+}, 1000);
+
+/* MATRIX EFFECT */
+
+const canvas = document.getElementById("matrix");
+const ctx = canvas.getContext("2d");
+
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+const letters = "HACKERLINUXNGINX01";
+const array = letters.split("");
+
+const fontSize = 14;
+const columns = canvas.width / fontSize;
+
+const drops = [];
+
+for(let x = 0; x < columns; x++)
+drops[x] = 1;
+
+function draw() {
+
+ctx.fillStyle = "rgba(0,0,0,0.05)";
+ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillStyle = "#0f0";
+ctx.font = fontSize + "px monospace";
+
+for(let i = 0; i < drops.length; i++) {
+
+const text = array[Math.floor(Math.random()*array.length)];
+
+ctx.fillText(text, i*fontSize, drops[i]*fontSize);
+
+if(drops[i]*fontSize > canvas.height && Math.random() > 0.975)
+drops[i] = 0;
+
+drops[i]++;
+}
+}
+
+setInterval(draw, 33);
+
+</script>
+
+</body>
+</html>
